@@ -1,19 +1,17 @@
 
 
 
-$(".updatemovie").on("click", function(event) {
+$(".updateburger").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-
-    
+    event.preventDefault();   
 
 
     var updatedBurger = {
-      burger: $(".updatemovie [name=movie]").val().trim()
+      burger: $(".updateburger [name=burger]").val().trim()
     };
 
     // Send the PUT request.
-    $.ajax("/burgers/" + id, {
+    $.ajax("/api/update" + id, {
       type: "PUT",
       data: updatedBurger
     }).then(
@@ -24,21 +22,21 @@ $(".updatemovie").on("click", function(event) {
     );
   });
 
-  $("#addmovie").on("submit", function(event) {
+  $("#addburger").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
-    var newMovie = {
-      movie: $("#addmovie [name=movie]").val().trim()
+    console.log("in addburger function");
+    var newBurger = {
+      burger: $("#nb [name=burger]").val().trim()
     };
 
     // Send the POST request.
-    $.ajax("/movies", {
+    $.ajax("/api/add", {
       type: "POST",
-      data: newMovie
+      data: newBurger
     }).then(
       function() {
-        console.log("added new movie");
+        console.log("added new burger");
         // Reload the page to get the updated list
         location.reload();
       }

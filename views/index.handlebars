@@ -16,7 +16,9 @@
                 <li>
                   <p>
                     {{this.id}}. {{this.burger_name}}
-                    <button data-eatburger="{{this.id}}" class="updateBurger">Eat It!</button>
+                    <br>
+                    <button data-eatburger="{{this.id}}" class="updateburger">Eat It!</button>
+                    {{!-- <a href="/{{this.id}}">Devour</a> --}}
                   </p>
                 </li>
                 <br>                  
@@ -28,12 +30,12 @@
       </div>
       <div class="col-sm-4">
         <div class="col-padding">
-          <form class="create-form">            
+          <form action="/" method="POST" id="addburger" class="create-form">            
               <div class="form-group">
                   <label for="nB">New Burger</label>
                   <textarea id="nB" name="burger" rows="2" cols="40"></textarea>
               </div>            
-              <button type="submit">Add a Burger</button>            
+              <button type="submit">Add It!</button>            
           </form>
         </div>
       </div>
