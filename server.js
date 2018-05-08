@@ -55,7 +55,7 @@ app.post("/", function(req, res) {
 app.put("/:id", function(req, res) {
   let id = req.params.id;
    console.log(id);
-  // console.log(res)
+  
   connection.query(
     "UPDATE burgers SET devoured = true WHERE id = ?",
     [req.params.id], function(err, result) {
@@ -63,12 +63,8 @@ app.put("/:id", function(req, res) {
         // If an error occurred, send a generic server failure
         return res.status(500).end();
       } 
-      //console.log(result);      
-      res.redirect("/");
-      // console.log("pass");
-      // location.reload("/");
-    });
-  // res.redirect("/");  
+      // res.redirect("/");
+    });    
 });
 
 // Start our server so that it can begin listening to client requests.

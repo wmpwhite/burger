@@ -1,3 +1,5 @@
+//  This file contains some client side logic to capture an on-click event that initiates a put to the database that updates the column "devoured" from false to true for the record whose id has been captured in the click event.
+
 
 $(document).ready(function() {
 $(".updateburger").on("click", function(event) {
@@ -12,9 +14,6 @@ $(".updateburger").on("click", function(event) {
       url: "/" + id      
     }).then(
       function(data) {        
-        // Reload the page to get the updated list 
-        console.log(data);
-        console.log(url);
         location.reload();
       });
   });

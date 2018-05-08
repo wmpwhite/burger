@@ -1,4 +1,6 @@
 
+// Code to establish a connection with the database.
+
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({  
@@ -15,5 +17,8 @@ connection.connect(function(err) {
   }
   console.log("connected as id " + connection.threadId);
 });
+
+
+// Export of connection to be used in other files, specifically server.js
 
 module.exports = connection;

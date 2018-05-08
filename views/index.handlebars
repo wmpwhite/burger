@@ -1,11 +1,13 @@
 
-
+{{!-- HTML to layout a page to display burgers uneaten on the, burgers eaten on the right, and a form to add new burgers inbetween those two columns.  It also includes some logic via handlebars. --}}
 
 <div class="container">
     <div class="page-header">
         <h3>Eat That Burger!</h3>
     </div>
     <div class="row grid-divider">
+
+      {{!-- The following div displays uneaten burgers on the left hand side of the page.  There is also handlebrs logic that loops through the database entries and selects those with a category of devoured = false to display. It also has a button for each burger to allow it to be eaten, which should move it to the right-hand side of the page but this is the failure in functionality.  It works but only on manual refresh.--}}
       <div class="col-sm-4">
         <div class="col-padding">        
           <h4>Burgers ready to eat:</h4>
@@ -17,8 +19,7 @@
                   <p>
                     {{this.id}}. {{this.burger_name}}
                     <br>
-                    <button data-eatburger="{{this.id}}" class="updateburger">Eat It!</button>
-                    {{!-- <a href="/{{this.id}}">Devour</a> --}}
+                    <button data-eatburger="{{this.id}}" class="updateburger">Eat It!</button>                    
                   </p>
                 </li>
                 <br>                  
@@ -28,6 +29,8 @@
 
         </div>
       </div>
+
+      {{!-- The following div creates a form and a button in the middle third of the page.  This form allows the user to enter a new burger. --}}
       <div class="col-sm-4">
         <div class="col-padding">
           <form action="/" method="POST" id="addburger" class="create-form">            
@@ -39,6 +42,8 @@
           </form>
         </div>
       </div>
+
+      {{!-- The following div displays eaten burgers on the right-hand side of the page.  It also has the handlebars logic to loop through all database entries and select those with a category of devoured = true for display. --}}
       <div class="col-sm-4">
         <div class="col-padding">
             <h4>Burgers that have been eaten:</h4>

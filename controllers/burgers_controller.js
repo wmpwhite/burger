@@ -1,5 +1,5 @@
 
-
+// This file was not used in the final implementation.  Server.js  performs these functions.
 
 $(".updateburger").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
